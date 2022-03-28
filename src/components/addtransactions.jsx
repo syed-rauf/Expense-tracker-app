@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     flexDirection: "column",
+    maxWidth: "100%",
   },
   margin: {
     margin: theme.spacing(1),

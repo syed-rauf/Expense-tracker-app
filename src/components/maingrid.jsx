@@ -11,6 +11,7 @@ import { GlobalContext } from "../globalcontext/globalcontext";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    maxWidth: "100%",
   },
   paper: {
     padding: theme.spacing(0),
