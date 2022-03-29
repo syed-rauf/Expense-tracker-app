@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { nanoid } from "nanoid";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-import { Button, FormControl } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 
 import { GlobalContext } from "../globalcontext/globalcontext";
 
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(3),
   },
   textField: {
-    width: "25ch",
+    width: "100%",
   },
 }));
 
@@ -51,8 +51,9 @@ export default function AddTransaction() {
   };
 
   return (
-    <FormControl className={classes.root}>
+    <form className={classes.root} onSubmit={handleSubmit}>
       <TextField
+        type="text"
         id="filled-secondary"
         label="Transaction Description"
         variant="filled"
@@ -62,6 +63,7 @@ export default function AddTransaction() {
       />
 
       <TextField
+        type="number"
         id="filled-secondary"
         label="Transaction Amount"
         variant="filled"
@@ -69,9 +71,9 @@ export default function AddTransaction() {
         value={amount}
         onChange={(e) => setamount(e.target.value)}
       />
-      <Button onClick={handleSubmit} variant="contained" color="primary">
+      <Button type="submit" variant="contained" color="primary">
         Add Transaction
       </Button>
-    </FormControl>
+    </form>
   );
 }
